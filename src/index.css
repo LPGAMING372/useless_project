@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #0a0d0b;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: #e4e7e3;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(111, 174, 140, 0.35);
+  color: #f4f7f3;
+}
+
+/* Slim, mossy scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0d0b;
+}
+::-webkit-scrollbar-thumb {
+  background: #2c332a;
+  border-radius: 999px;
+  border: 2px solid #0a0d0b;
+}
+
+:focus-visible {
+  outline: 2px solid #6fae8c;
+  outline-offset: 3px;
+}
+
+.font-display {
+  letter-spacing: 0.03em;
+}
+
+/* Engraved-stone text effect for tombstone headlines */
+.text-engraved {
+  color: #cfd8ce;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06),
+    0 -1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.text-glow {
+  text-shadow: 0 0 18px rgba(111, 174, 140, 0.45);
+}
+
+/* Layered fog bands drifting across the hero / footer */
+.fog-layer {
+  position: absolute;
+  inset: -10% -20%;
+  background: radial-gradient(
+      ellipse 60% 40% at 30% 70%,
+      rgba(207, 216, 206, 0.06),
+      transparent 60%
+    ),
+    radial-gradient(ellipse 50% 30% at 70% 80%, rgba(207, 216, 206, 0.05), transparent 65%);
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.grain-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
