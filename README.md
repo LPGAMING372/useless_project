@@ -50,6 +50,9 @@ Open the local URL shown in the terminal, usually:
 
 http://localhost:5173
 
+### click down to check it online:
+https://graveyardofideas.vercel.app/
+
 ### Project Documentation
 For Software: Graveyard of Ideas is a React-based interactive web application that provides a virtual cemetery for abandoned, useless, and ridiculous ideas.
 
